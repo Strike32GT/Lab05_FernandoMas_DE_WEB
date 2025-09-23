@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lab05_app2_FERNANDOMAS:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>lab05_app2_FERNANDOMAS</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="fernandoMAS-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="lab05_app2_FERNANDOMAS:war exploded" />
+    </root>
+  </artifact>
+</component>
