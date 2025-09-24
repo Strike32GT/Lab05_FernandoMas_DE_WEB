@@ -18,9 +18,9 @@
     else{
         Administrador adm=(Administrador)misesion.getAttribute("eladministrador");
         String nombre=adm.getNombres()+ " "+adm.getApellidos();
-        String sid=request.getParameter("id");
+        String codigo=request.getParameter("codigo");
         CursoService servicio=new CursoServiceimpl();
-        Curso curso=servicio.buscar(sid);
+        Curso curso=servicio.buscar(codigo);
 %>
 <head>
     <title>Curso Actualizar - <%=nombre%></title>
@@ -32,10 +32,10 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase">Actualizar Cliente</h3>
+                    <h3 class="text-uppercase">Actualizar Curso</h3>
                 </div>
                 <div class="card-body">
-                    <form action="cController">
+                    <form action="cController" method="post">
                         <div class="input-group mt-2">
                             <label class="input-group-text">Codigo</label>
                             <input class="form-control" type="text" name="txtCodigo" id="nomcli" placeholder="Codigo"

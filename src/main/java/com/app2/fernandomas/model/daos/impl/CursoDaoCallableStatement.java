@@ -61,12 +61,12 @@ public class CursoDaoCallableStatement implements CursoDao {
     public Curso find(String id) {
         Curso curso=null;
         try (Connection con=DBConn.getConnection();
-             CallableStatement cst=con.prepareCall("{call sp_find_curso(?,?,?)}")){
+             CallableStatement cst=con.prepareCall("{call sp_find_curso(?)}")){
              cst.setString(1,id);
              rs=cst.executeQuery();
              if(rs.next()){
                  curso=new Curso(rs.getString("chrCurCodigo"), rs.getString("vchCurNombre"),
-                         rs.getInt("intCurCodigos"));
+                         rs.getInt("interCurCreditos"));
              }
         }catch (SQLException e){
             System.out.println("Error en la consulta");

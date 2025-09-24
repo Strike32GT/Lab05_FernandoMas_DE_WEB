@@ -28,7 +28,31 @@ public class CursoController extends HttpServlet {
         String accion=request.getParameter("accion");
         switch (accion){
             case "insertar": servicio.grabar(curso);break;
-            case "actualizar": servicio.actualizar(curso);break;
+            case "actualizar":
+                servicio.actualizar(curso);
+                break;
+            case "eliminar": servicio.borrar(curso.getCodigo());break;
+        }
+        response.sendRedirect("cursoMan.jsp");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        Curso curso=new Curso();
+        curso.setCodigo(request.getParameter("txtCodigo"));
+        curso.setNombre(request.getParameter("txtNombre"));
+        curso.setCreditos(Integer.parseInt(request.getParameter("txtCreditos")));
+
+
+        CursoService servicio=new CursoServiceimpl();
+        String accion=request.getParameter("accion");
+
+        
+        switch (accion){
+            case "insertar": servicio.grabar(curso);break;
+            case "actualizar":
+                servicio.actualizar(curso);
+                break;
             case "eliminar": servicio.borrar(curso.getCodigo());break;
         }
         response.sendRedirect("cursoMan.jsp");

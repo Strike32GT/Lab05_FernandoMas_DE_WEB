@@ -48,10 +48,22 @@
                 <td><%=curso.getCodigo()%></td>
                 <td><%=curso.getNombre()%></td>
                 <td><%=curso.getCreditos()%></td>
-                <td><a class="btn btn-warning" href="cursoEliminar.jsp?id=<%=curso.getCodigo()%>">
-                    <i class="fa-solid fa-trash"></i>Borrar</a>
-                <a class="btn btn-danger" href="cursoActualizar.jsp?id=<%=curso.getCodigo()%>">
-                    <i class="fa-solid fa-pencil">Actualizar</i></a></td>
+                <td>
+
+                    <a class="btn btn-warning"
+                       href="cController?accion=eliminar&txtCodigo=<%=curso.getCodigo()%>">
+                        <i class="fa-solid fa-trash"></i> Borrar
+                    </a>
+
+
+                    <a class="btn btn-danger"
+                        href="cursoActualizar.jsp?codigo=<%=curso.getCodigo()%>">
+                            <i class="fa-solid fa-pencil">Actualizar</i>
+                    </a>
+
+
+                </td>
+
             </tr>
             <%}%>
         </table>

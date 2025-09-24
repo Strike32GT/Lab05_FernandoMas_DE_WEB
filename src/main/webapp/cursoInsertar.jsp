@@ -29,7 +29,7 @@
                     <h3 class="text-uppercase">Crear Curso</h3>
                 </div>
                 <div class="card-body">
-                    <form action="cController">
+                    <form action="cController" method="post">
                         <div class="input-group mt-2">
                             <label class="input-group-text">Codigo:</label>
                             <input class="form-control" type="text" name="txtCodigo" id="nomcli" placeholder="Codigo"
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group mt-4 d-grid gap-2">
                             <input name="accion" type="hidden" value="insertar"/><br/>
-                            <input name="btn btn-success" type="submit" value="insertar"/>
+                            <input class="btn btn-success" type="submit" value="insertar"/>
                         </div>
                     </form>
                 </div>
